@@ -1,0 +1,66 @@
+/* static/css/styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+header, footer {
+    text-align: center;
+}
+
+nav a {
+    margin: 0 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #cccccc;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+.flashes {
+    list-style-type: none;
+    padding: 0;
+}
+
+.flashes li {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.flashes .success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flashes .danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.error {
+    color: red;
+}
+
+
+.delete-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}

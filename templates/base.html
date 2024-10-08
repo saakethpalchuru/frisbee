@@ -1,0 +1,41 @@
+<!-- templates/base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frisbee Elo Rating System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Frisbee Elo Rating System</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a> |
+            <a href="{{ url_for('leaderboard') }}">Leaderboard</a> |
+            <a href="{{ url_for('add_player') }}">Add Player</a> |
+            <a href="{{ url_for('add_game') }}">Add Game</a> |
+            <a href="{{ url_for('game_history') }}">Game History</a>
+        </nav>
+        <hr>
+    </header>
+    <main>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <hr>
+        <p>&copy; {{ datetime.utcnow().year }} Frisbee Elo Rating System</p>
+    </footer>
+
+    {% block scripts %}{% endblock %} <!-- Add this block if not already present -->
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!-- templates/add_game.html -->
+
+{% extends "base.html" %}
+{% block content %}
+<h2>Add Game Result</h2>
+<form method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.date.label }}<br>
+        {{ form.date() }}<br>
+        {% for error in form.date.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+    </p>
+    <h3>Team 1</h3>
+    <p>
+        {{ form.team1_players.label }}<br>
+        {{ form.team1_players(multiple=True, size=10) }}<br>
+        {% for error in form.team1_players.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.team1_score.label }}<br>
+        {{ form.team1_score() }}<br>
+        {% for error in form.team1_score.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+    </p>
+    <h3>Team 2</h3>
+    <p>
+        {{ form.team2_players.label }}<br>
+        {{ form.team2_players(multiple=True, size=10) }}<br>
+        {% for error in form.team2_players.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.team2_score.label }}<br>
+        {{ form.team2_score() }}<br>
+        {% for error in form.team2_score.errors %}
+            <span class="error">{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}
